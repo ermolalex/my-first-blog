@@ -1,19 +1,17 @@
-<html>
-    <head>
-       <title> My blog </title>
-    </head>
+{% extends 'blog/base.html' %}
 
-    <body>
-        <h1><a href="">Мой крутой блог</a></р1>
-        {% for post in posts %}
-            {% if post.published_date %}
-                <div>
-                    <h1><a href="">{{ post.title }}</a></h1>
-                    <p> {{ post.text }} </p>
-                    <p> published: {{ post.published_date }}, by {{ post.author }} </p>
-                    <p>*****************************************************************</p>
+{% block content %}
+
+    {% for post in posts %}
+        {% if post.published_date %}
+            <div class="post">
+                <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+                <div class="date">
+                    {{ post.published_date }}, {{ post.author }}
                 </div>
-            {% endif %}
-        {% endfor %}
-    </body>
-</html>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+{% endblock content %}
