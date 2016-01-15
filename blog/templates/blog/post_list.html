@@ -5,15 +5,15 @@
 
     <body>
         <h1><a href="">Мой крутой блог</a></р1>
-        <div>
-            <h3><a href="">Первый пост</a></h3>
-            <p> kf-,kf-,kf Kjhtv bgcev b dczrfz хрень </p>
-            <p>13.01.16 </p>
-        </div>
-        <div>
-            <h3><a href="">Второй пост</a></h3>
-            <p> kf-,kf-,kf Kjhtv bgcev b dczrfz хрень </p>
-            <p>13.01.16 </p>
-        </div>
+        {% for post in posts %}
+            {% if post.published_date %}
+                <div>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p> {{ post.text }} </p>
+                    <p> published: {{ post.published_date }}, by {{ post.author }} </p>
+                    <p>*****************************************************************</p>
+                </div>
+            {% endif %}
+        {% endfor %}
     </body>
 </html>
