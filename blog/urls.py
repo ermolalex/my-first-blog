@@ -11,4 +11,7 @@ urlpatterns = [
     url(r'^post/(?P<pk>[0-9]+)/edit$', views.post_edit, name='post_edit'),
     url(r'^post/(?P<pk>[0-9]+)/pyblish$', views.post_publish, name='post_publish'),
     url(r'^post/(?P<pk>[0-9]+)/remove/$', views.post_remove, name='post_remove'),
+    url(r'^post/(?P<pk>[0-9]+)/comment$', views.add_comment, name='add_comment'),
+    url(r'^post/(?P<pk>[0-9]+)/comment/approve/$', views.comment_approve, name='comment_approve'),
+    url(r'^post/(?P<pk>[0-9]+)/comment/remove/$', views.comment_remove, name='comment_remove'),
 ]

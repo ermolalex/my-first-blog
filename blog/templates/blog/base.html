@@ -18,7 +18,7 @@
             {% else %}
                 <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
-            <h1><a href="http://127.0.0.1:8000">Мой крутой блог</a></р1>
+            <h1><a href="{% url 'blog.views.post_list' %}">Мой крутой блог</a></р1>
         </div>
 
         <div class="content container">
